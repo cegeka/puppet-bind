@@ -1,0 +1,5 @@
+= puppet-bind module
+
+{<img src='https://codex.cegeka.be/jenkins/job/puppet-bind/badge/icon' />}[https://codex.cegeka.be/jenkins/job/puppet-bind/]
+
+This is the bind module.
