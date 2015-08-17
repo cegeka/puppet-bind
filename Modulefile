@@ -1,8 +1,11 @@
-name 'thias-bind'
-version '0.5.1'
-source 'git://github.com/thias/puppet-bind'
-author 'Matthias Saou'
-license 'Apache 2.0'
-summary 'BIND DNS server module'
-description "Install and enable a BIND DNS server, create and manage DNS zone files."
-project_page 'https://github.com/thias/puppet-bind'
+name    'cegeka-bind'
+version '0.0.1'
+source 'UNKNOWN'
+author 'cegeka'
+license 'UNKNOWN'
+summary 'UNKNOWN'
+description 'UNKNOWN'
+project_page 'UNKNOWN'
+
+## Add dependencies, if any:
+# dependency 'username/name', '>= 1.2.0'

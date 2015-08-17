@@ -1,13 +1,11 @@
 require 'rubygems'
 require 'rake'
-require 'bundler'
-require 'rspec/core/rake_task'
-require 'puppetlabs_spec_helper/rake_tasks'
 
-begin
-  Bundler.setup(:default)
-rescue Bundler::BundlerError => e
-  $stderr.puts e.message
-  $stderr.puts "Run `bundle install` to install missing gems"
-  exit e.status_code
+task_dir = File.expand_path("../tasks", __FILE__)
+
+FileList["#{task_dir}/**/*.rake"].each { |fn| load fn }
+
+desc "Default task prints the available targets."
+task :default do
+  sh %{rake -T}
 end
