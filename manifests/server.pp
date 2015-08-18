@@ -11,4 +11,3 @@ class bind::server (
     packagenameprefix => $packagenameprefix,
   }
 }
-

@@ -48,8 +48,8 @@ define bind::server::file (
     $bindgroup = $::bind::params::bindgroup
   }
 
-  if $source      { $zone_source = $source }
-  if $source_base { $zone_source = "${source_base}${title}" }
+  if $source      {$zone_source = $source}
+  if $source_base {$zone_source = "${source_base}${title}"}
 
   if ! defined(File[$zonedir]) {
     file { $zonedir:
