@@ -1,9 +1,11 @@
-# A sample Gemfile
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-# gem "rails"
+gem 'fpm'
+gem 'puppet', '3.8.1'
+gem 'puppet-lint'
 gem 'rspec-puppet'
 gem 'rake'
-gem 'puppet'
+gem 'ci_reporter_cucumber'
+gem 'ci_reporter_rspec'
 gem 'puppetlabs_spec_helper'
-gem 'puppet-lint'
+gem 'beaker-rspec'
