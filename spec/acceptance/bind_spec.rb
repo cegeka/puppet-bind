@@ -19,7 +19,7 @@ describe 'bind::server::conf' do
       apply_manifest(pp, :catch_changes => true)
     end
 
-    describe file '/etc/bind.conf' do
+    describe file '/etc/named.conf' do
       it { is_expected.to be_file }
       its(:content) { should match /8.8.8.8/ }
     end
