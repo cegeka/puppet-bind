@@ -89,20 +89,31 @@ options {
 };
 
 logging {
-    channel main_log {
-        file "/var/log/named/named.log" versions 3 size 5m;
-        severity info;
-        print-time yes;
-        print-severity yes;
-        print-category yes;
-    };
-    category default{
-        main_log;
-    };
-    category lame-servers {
-        null;
-    };
+<% if !@logging.empty? -%>
+<% @logging.sort_by {|key,value| key}.each do |key,value| -%>
+  <%= key %> {
+<% value.sort.each do |logkey,logvalue| -%>
+      <%= logkey %> <%= logvalue %>;
+<% end -%>
+  };
+<% end -%>
+<% else -%>
+  channel main_log {
+      file "/var/log/named/named.log" versions 3 size 5m;
+      severity info;
+      print-time yes;
+      print-severity yes;
+      print-category yes;
+  };
+  category default{
+      main_log;
+  };
+  category lame-servers {
+      null;
+  };
+<% end -%>
 };
+
 <% if !@views.empty? -%>
 
 <% @views.sort_by {|key,value| key}.each do |key,value| -%>
