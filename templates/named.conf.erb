@@ -93,7 +93,11 @@ logging {
 <% @logging.sort_by {|key,value| key}.each do |key,value| -%>
   <%= key %> {
 <% value.sort.each do |logkey,logvalue| -%>
+<% if logvalue != :null and logvalue != :undef -%>
       <%= logkey %> <%= logvalue %>;
+<% else -%>
+      <%= logkey %> ;
+<% end -%>
 <% end -%>
   };
 <% end -%>
